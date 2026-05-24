@@ -15,6 +15,12 @@ router.post('/food-partner/register', authController.registerFoodPartner)
 router.post('/food-partner/login', authController.loginFoodPartner)
 router.get('/food-partner/logout', authController.logoutFoodPartner)
 
+res.cookie('token', token, {
+    httpOnly: true,
+    sameSite: 'none',  // ← must be 'none' for cross-domain
+    secure: true       // ← must be true when sameSite is 'none'
+})
+
 
 
 module.exports = router;
