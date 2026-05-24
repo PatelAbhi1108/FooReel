@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import axios from 'axios';
 import '../../styles/create-food.css';
 import { useNavigate } from 'react-router-dom';
+import { API_URL } from '../../config';
 
 const CreateFood = () => {
     const [ name, setName ] = useState('');
@@ -56,7 +57,7 @@ const CreateFood = () => {
         formData.append('description', description);
         formData.append("mama", videoFile);
 
-        const response = await axios.post("http://localhost:3000/api/food", formData, {
+        const response = await axios.post(`${API_URL}/api/food`, formData, {
             withCredentials: true,
         })
 
