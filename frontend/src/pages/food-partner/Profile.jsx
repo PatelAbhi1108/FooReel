@@ -2,7 +2,6 @@ import React, { useState, useEffect, use } from 'react'
 import '../../styles/profile.css'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-import React from 'react'
 import { API_URL } from '../../config'
 
 const Profile = () => {
